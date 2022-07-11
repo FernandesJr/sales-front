@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    position: relative;
+    top: -63px;
+    width: 150px;
+  }
+
+  mat-card {
+    width: 310px;
+  }
+  mat-toolbar {
+    background: var(--light-green-color);
+    height: 125px;
+  }
+}
+
+
