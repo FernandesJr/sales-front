@@ -7,21 +7,24 @@ main {
   width: 100%;
 
   mat-toolbar {
+    display: flex;
+    justify-content: center;
+
     background: var(--light-green-color);
     height: 125px;
     width: 100%;
     padding: 0;
+
+    img {
+      position: relative;
+      top: 63px;
+      width: 150px;
+    }
   }
 
-  img {
-    position: relative;
-    top: -63px;
-    width: 150px;
-  }
+
 
   mat-card {
-    position: relative;
-    top: -50px;
     width: 310px;
 
     background: var(--gray-color);
@@ -57,8 +60,12 @@ main {
 
       button {
         margin: 15px 0 15px 0;
-        background: var(--primary-color);
-        color: var(--light-green-color);
+        cursor: no-drop;
+        &.color {
+          background: var(--primary-color);
+          color: var(--light-green-color);
+          cursor: pointer;
+        }
       }
     }
   }

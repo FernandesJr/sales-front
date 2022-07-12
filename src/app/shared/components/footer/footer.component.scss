@@ -1,5 +1,6 @@
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -9,4 +10,17 @@ footer {
   padding: 0;
 
   background: var(--secondary-color);
+  color: var(--white);
+
+  .info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 300px;
+    p {
+      margin: 0;
+    }
+
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,12 @@ export class LoginComponent implements OnInit {
   public iconPassword: string = 'visibility';
   public typePassword: string = 'password';
 
-  constructor() { }
+  formAuth: FormGroup = this.formBuilder.group({
+    email: ["", [Validators.required, Validators.email]],
+    password: ["", [Validators.required, Validators.minLength(6)]]
+  });
+
+  constructor(private formBuilder: FormBuilder,) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +29,10 @@ export class LoginComponent implements OnInit {
       this.iconPassword = 'visibility';
       this.typePassword = 'password';
     }
+  }
+
+  public auth(): void {
+    console.log(this.formAuth.value);
   }
 
 }
