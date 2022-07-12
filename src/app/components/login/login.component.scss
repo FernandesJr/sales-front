@@ -2,7 +2,16 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+
+  mat-toolbar {
+    background: var(--light-green-color);
+    height: 125px;
+    width: 100%;
+    padding: 0;
+  }
 
   img {
     position: relative;
@@ -11,12 +20,49 @@ main {
   }
 
   mat-card {
+    position: relative;
+    top: -50px;
     width: 310px;
+
+    background: var(--gray-color);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        width: 100%;
+        margin: 0 auto 15 auto;
+        text-align: center;
+        color: var(--secondary-color);
+      }
+
+      mat-form-field {
+        border-color: var(--primary-color);
+
+        input {
+          border-color: var(--primary-color);
+        }
+
+        mat-icon {
+          opacity: 0.5;
+        }
+      }
+
+
+      a {
+        color: var(--light-green-color);
+        text-decoration: none;
+      }
+
+      button {
+        margin: 15px 0 15px 0;
+        background: var(--primary-color);
+        color: var(--light-green-color);
+      }
+    }
   }
-  mat-toolbar {
-    background: var(--light-green-color);
-    height: 125px;
+  .icon_password {
+    cursor: pointer;
   }
 }
-
-
