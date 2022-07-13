@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
   public iconPassword: string = 'visibility';
   public typePassword: string = 'password';
 
+  public error: boolean = false;
+
   formAuth: FormGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.minLength(6)]]

@@ -37,6 +37,7 @@
         [ngClass]="formAuth.invalid == true ? 'disabled' : 'color'">
         Entrar
       </button>
+      <span *ngIf="error"  class="error">Credênciais inválidas, por favor verifique.</span>
     </form>
   </mat-card>
   <app-footer></app-footer>
