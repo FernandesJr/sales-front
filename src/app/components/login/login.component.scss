@@ -1,9 +1,11 @@
+@import '../../config-scss/rem-calc.scss';
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 
   mat-toolbar {
@@ -11,21 +13,19 @@ main {
     justify-content: center;
 
     background: var(--light-green-color);
-    height: 125px;
+    height: rem-calc(150);
     width: 100%;
     padding: 0;
 
     img {
       position: relative;
-      top: 63px;
-      width: 150px;
+      top: rem-calc(75);
+      width: rem-calc(150);
     }
   }
 
-
-
   mat-card {
-    width: 310px;
+    width: rem-calc(310);
 
     background: var(--gray-color);
 

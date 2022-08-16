@@ -1,13 +1,15 @@
+@import '../../../config-scss/rem-calc.scss';
+
 footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
-  height: 100px;
+  height: rem-calc(100);
   width: 100%;
   left: 0;
-  padding: 0;
+  padding-top: rem-calc(15);
 
   background: var(--secondary-color);
   color: var(--white);
@@ -16,11 +18,15 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
     width: 300px;
-    p {
-      margin: 0;
+    a {
+      text-decoration: none;
+      color: var(--white);
     }
 
+  }
+
+  .gilfer {
+    font-size: rem-calc(12);
   }
 }
