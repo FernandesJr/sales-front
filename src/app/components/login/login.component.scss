@@ -1,32 +1,27 @@
 @import '../../config-scss/rem-calc.scss';
 
+
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100vh;
   width: 100%;
 
-  mat-toolbar {
-    display: flex;
-    justify-content: center;
-
+  .bar {
     background: var(--light-green-color);
-    height: rem-calc(150);
+    min-height: rem-calc(150);
     width: 100%;
-    padding: 0;
+  }
 
-    img {
-      position: relative;
+  img {
+      position: absolute;
       top: rem-calc(75);
       width: rem-calc(150);
-    }
   }
 
   mat-card {
-    width: rem-calc(310);
-
+    width: 310px;
+    margin: rem-calc(100) auto;
     background: var(--gray-color);
 
     form {
@@ -34,7 +29,6 @@ main {
       flex-direction: column;
       justify-content: center;
       h2 {
-        width: 100%;
         margin: 0 auto 15 auto;
         text-align: center;
         color: var(--secondary-color);

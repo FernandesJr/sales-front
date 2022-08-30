@@ -1,4 +1,4 @@
 @function rem-calc($size){
-  $value: $size / 16; //convertendo px pra 'rem' com a base defaut de 16px no root
+  $value: calc($size / 16); //convertendo px pra 'rem' com a base defaut de 16px no root
   @return #{$value}rem;
 }

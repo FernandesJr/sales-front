@@ -1,0 +1,18 @@
+@import '../../config-scss/rem-calc.scss';
+
+/*<i class="fa-regular fa-bars"></i>*/
+
+mat-drawer-container {
+  height: 100vh;
+}
+
+mat-drawer {
+  width: rem-calc(200);
+  background-color: var(--primary-color);
+  img {
+    display: block;
+    width: rem-calc(100);
+    margin: auto;
+    padding-top: rem-calc(25);
+  }
+}

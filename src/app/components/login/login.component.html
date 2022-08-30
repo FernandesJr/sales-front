@@ -1,7 +1,6 @@
 <main>
-  <mat-toolbar>
-    <img src="assets/images/logo.png" alt="logo da empresa" />
-  </mat-toolbar>
+  <div class="bar"></div>
+  <img src="assets/images/logo.png" alt="logo da empresa" />
   <mat-card class="mat-elevation-z4">
     <form [formGroup]="formAuth" (ngSubmit)="auth()">
       <h2>Login</h2>
@@ -40,5 +39,7 @@
       <span *ngIf="error"  class="error">Credênciais inválidas, por favor verifique.</span>
     </form>
   </mat-card>
-  <app-footer></app-footer>
+
 </main>
+<app-footer></app-footer>
+
