@@ -9,10 +9,68 @@ mat-drawer-container {
 mat-drawer {
   width: rem-calc(200);
   background-color: var(--primary-color);
+
   img {
     display: block;
     width: rem-calc(100);
     margin: auto;
-    padding-top: rem-calc(25);
+    padding: rem-calc(25) 0px rem-calc(25) 0px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .nav-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--gray-color);
+
+    mat-icon {
+      width: rem-calc(40);
+      height: rem-calc(40);
+      padding-top: 10px;
+      font-size: rem-calc(25);
+    }
+
+    #sales-search {
+      font-size: rem-calc(35);
+    }
+
+    span {
+      padding-bottom: 20px;
+      font-size: .7rem;
+      margin-left: -12px;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    width: 80%;
+    margin: 5px auto;
+    background-color: var(--gray-color);
+  }
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gray-color);
+
+  mat-icon {
+    color: var(--primary-color);
+  }
+
+  .btn-user-name {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+  }
+}
+
+/*Em telas menores de 500px o icone de logout some da toobar*/
+@media screen and (max-width: 500px) {
+  #btn-logout {
+    display: none;
   }
 }

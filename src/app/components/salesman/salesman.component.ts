@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesmanComponent implements OnInit {
 
-  showFiller = true;
+  public menu: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public showMenu():void {
+    this.menu = !this.menu;
   }
 
 }

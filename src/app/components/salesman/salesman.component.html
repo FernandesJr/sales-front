@@ -2,12 +2,62 @@
   <mat-drawer #drawer class="sidenav" mode="side">
     <!--Conteudo do nav-->
     <img src="assets/images/logo.png" alt="Logo da empresa">
+
+    <a href="">
+      <div class="nav-icons">
+        <mat-icon aria-hidden="false" aria-label="dashboard">local_fire_department</mat-icon>
+        <span>Dashboard</span>
+      </div>
+    </a>
+
+    <div class="divider"></div>
+
+    <a href="">
+      <div class="nav-icons">
+        <mat-icon aria-hidden="false" aria-label="dashboard">shopping_cart</mat-icon>
+        <span>Vendas</span>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="nav-icons">
+        <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">manage_search</mat-icon>
+        <span>Histórico de clientes</span>
+      </div>
+    </a>
+
+    <div class="divider"></div>
+
+    <a href="">
+      <div class="nav-icons">
+        <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>
+        <span>Configurações</span>
+      </div>
+    </a>
+
+    <a href="">
+      <div class="nav-icons">
+        <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">logout</mat-icon>
+        <span>Logout</span>
+      </div>
+    </a>
   </mat-drawer>
 
   <div class="sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
+    <mat-toolbar class="mat-elevation-z2">
+
+      <button type="button" mat-button (click)="drawer.toggle(); showMenu()">
+        <mat-icon aria-hidden="false" aria-label="abrir menu" *ngIf="menu">menu</mat-icon>
+        <mat-icon aria-hidden="false" aria-label="fechar menu" *ngIf="!menu">close</mat-icon>
+      </button>
+
+      <button mat-button class="btn-user-name"><span>Fernandes</span></button>
+
+      <button type="button" mat-button >
+        <mat-icon aria-hidden="false" aria-label="sair" id="btn-logout">logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
   </div>
 
 </mat-drawer-container>
