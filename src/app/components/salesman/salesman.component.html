@@ -3,7 +3,7 @@
     <!--Conteudo do nav-->
     <img src="assets/images/logo.png" alt="Logo da empresa">
 
-    <a href="">
+    <a [routerLink]="['/salesman', 1]">
       <div class="nav-icons">
         <mat-icon aria-hidden="false" aria-label="dashboard">local_fire_department</mat-icon>
         <span>Dashboard</span>
@@ -12,14 +12,14 @@
 
     <div class="divider"></div>
 
-    <a href="">
+    <a routerLink="/sales">
       <div class="nav-icons">
         <mat-icon aria-hidden="false" aria-label="dashboard">shopping_cart</mat-icon>
         <span>Vendas</span>
       </div>
     </a>
 
-    <a href="">
+    <a routerLink="/search-clients">
       <div class="nav-icons">
         <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">manage_search</mat-icon>
         <span>Histórico</span>
@@ -28,7 +28,7 @@
 
     <div class="divider"></div>
 
-    <a href="">
+    <a routerLink="/configurations">
       <div class="nav-icons">
         <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>
         <span>Configurações</span>
@@ -53,7 +53,7 @@
 
       <button mat-button class="btn-user-name"><span>Fernandes</span></button>
 
-      <button type="button" mat-button >
+      <button type="button" mat-button (click)="logout()">
         <mat-icon aria-hidden="false" aria-label="sair" id="btn-logout">logout</mat-icon>
       </button>
     </mat-toolbar>

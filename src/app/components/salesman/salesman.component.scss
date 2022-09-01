@@ -51,6 +51,10 @@ mat-drawer {
     margin: 5px auto;
     background-color: var(--gray-color);
   }
+
+  .nav-icons:hover {
+    color: var(--light-green-color);
+  }
 }
 
 mat-toolbar {

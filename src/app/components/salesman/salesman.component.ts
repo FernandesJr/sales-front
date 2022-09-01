@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,13 +10,17 @@ export class SalesmanComponent implements OnInit {
 
   public menu: boolean = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public showMenu():void {
     this.menu = !this.menu;
+  }
+
+  public logout():void {
+    this.router.navigate(['']);
   }
 
 }

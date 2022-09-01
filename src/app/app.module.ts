@@ -8,14 +8,14 @@ import { LoginComponent } from './components/login/login.component';
 import { AppMaterialModule } from './shared/app-material/app-material/app-material.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SalesmanComponent } from './components/salesman/salesman.component';
+import { ErroComponent } from './components/erro/erro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FooterComponent,
-    SalesmanComponent
+    ErroComponent
   ],
   imports: [
     BrowserModule,
