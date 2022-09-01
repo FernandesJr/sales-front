@@ -28,18 +28,20 @@ mat-drawer {
     color: var(--gray-color);
 
     mat-icon {
-      width: rem-calc(40);
-      height: rem-calc(40);
-      padding-top: 10px;
+      width: rem-calc(35);
+      height: rem-calc(35);
       font-size: rem-calc(25);
     }
 
     #sales-search {
-      font-size: rem-calc(35);
+      font-size: rem-calc(30);
+    }
+
+    #nav-logout {
+      margin-top: 15px;
     }
 
     span {
-      padding-bottom: 20px;
       font-size: .7rem;
       margin-left: -12px;
     }
@@ -48,7 +50,7 @@ mat-drawer {
   .divider {
     height: 1px;
     width: 80%;
-    margin: 5px auto;
+    margin: 15px auto;
     background-color: var(--gray-color);
   }
 

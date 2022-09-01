@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SalesmanRoutingModule } from './salesman-routing.module';
+import { SaleComponent } from './sale/sale.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
-    SalesmanComponent
+    SalesmanComponent,
+    SaleComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
