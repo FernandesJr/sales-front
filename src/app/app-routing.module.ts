@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     //Lazy Loading, somente carrega os componetes do modulo ao ser requisitado
     path: 'salesman',
-    loadChildren: () => import('./components/salesman/salesman.module').then(m => m.SalesmanModule)},
+    loadChildren: () => import('./components/salesman/salesman.module').then(m => m.SalesmanModule)
+  },
   {path: 'erro', component: ErroComponent},
   {path: '**', redirectTo: 'erro'}, // Rota coringa, qualquer rota inexistente é capturada
 ];

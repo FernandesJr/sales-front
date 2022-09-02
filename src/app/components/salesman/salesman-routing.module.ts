@@ -8,10 +8,8 @@ const routes: Routes = [
   {
     path: '', component: SalesmanComponent,
     children: [
-      {path: 'dashboard', component: DashboardComponent},
-      {path: 'sale', component: SaleComponent},
-      {path: 'saleshistory'},
-      {path: 'configuration'},
+      {path: 'dashboard', component: DashboardComponent, title: 'Dashboard-Siga Natural'},
+      {path: 'sale', component: SaleComponent}
     ]
   },
 ];
