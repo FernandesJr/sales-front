@@ -45,13 +45,11 @@ main {
       height: 15px;
       margin-top: 10px;
       border-radius: var(--radius-default);
-      color: var(--primary-color);
-      background-color: var(--primary-color);
     }
 
-    /*Mudar o background da barra de progresso do material*/
+    /*Mudar o background da barra de progresso do material, mudei para o styles.css
     ::ng-deep .mat-progress-bar-fill::after {
       background-color: var(--primary-color);
-    }
+    }*/
   }
 }

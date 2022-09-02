@@ -1,1 +1,22 @@
-<p>sale works!</p>
+<main>
+  <h2>Venda</h2>
+  <section>
+    <h3>CNPJ</h3>
+    <mat-form-field appearance="outline">
+      <mat-label>Cnpj do cliente</mat-label>
+      <input
+        mask="00.000.000/0000-00"
+        matInput
+        placeholder="Cnpj"
+        type="text"
+        required
+        formControlName="email">
+      <mat-icon matSuffix>number</mat-icon>
+    </mat-form-field>
+  </section>
+
+  <div class="divider"></div>
+
+  <h3 id="products">Produtos</h3>
+</main>
+

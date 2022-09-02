@@ -1,3 +1,4 @@
+import { NgxMaskModule } from 'ngx-mask';
 import { AppMaterialModule } from './../../shared/app-material/app-material/app-material.module';
 import { SalesmanComponent } from './salesman.component';
 import { NgModule } from '@angular/core';
@@ -17,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     CommonModule,
     SalesmanRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    NgxMaskModule.forChild()
   ]
 })
 export class SalesmanModule { }

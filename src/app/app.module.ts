@@ -9,6 +9,7 @@ import { AppMaterialModule } from './shared/app-material/app-material/app-materi
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErroComponent } from './components/erro/erro.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ErroComponent } from './components/erro/erro.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot() //Nos modulos filhos também precisa importar como forChild
   ],
   providers: [],
   bootstrap: [AppComponent]
