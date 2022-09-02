@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -13,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   public error: boolean = false;
 
-  formAuth: FormGroup = this.formBuilder.group({
+  formAuth: UntypedFormGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private formBuilder: FormBuilder,) { }
+  constructor(private formBuilder: UntypedFormBuilder,) { }
 
   ngOnInit(): void {
   }
