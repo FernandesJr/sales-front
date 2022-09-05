@@ -37,4 +37,53 @@ main {
   h3#products {
     color: var(--secondary-color);
   }
+
+  .card-product {
+    max-width: 320px;
+    margin: 30px 5px;
+    padding: 5px;
+    border-radius: var(--radius-default);
+    background-color: var(--gray-color);
+    box-shadow: var(--shadow-default);
+
+    h4 {
+      text-align: center;
+      padding: 10px;
+      color: var(--primary-color);
+    }
+
+    .product-info {
+      display: flex;
+      position: relative;
+      padding-bottom: 10px;
+
+      img {
+        width: 100px;
+        border-radius: 5px;
+      }
+
+      .desc-product {
+        padding: 0px 15px;
+        text-align: justify;
+      }
+
+      .price-product {
+        position: absolute;
+        bottom: -5px;
+        left: 115px;
+
+        font-weight: 500;
+        color: var(--secondary-color);
+      }
+    }
+
+    mat-form-field {
+      width: 48%;
+      margin-right: 5px;
+
+      mat-icon {
+        opacity: .7;
+      }
+    }
+  }
 }

@@ -12,4 +12,8 @@ export class SaleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public somar_product(): void {
+    
+  }
+
 }

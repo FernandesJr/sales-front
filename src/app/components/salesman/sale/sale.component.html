@@ -17,5 +17,34 @@
   <div class="divider"></div>
 
   <h3 id="products">Produtos</h3>
+
+  <div class="card-product">
+    <h4>Amargo Tradicional</h4>
+    <div class="product-info">
+      <img src="assets/images/products/amargo/amargo-700px.jpg" alt="amargo tradicional">
+      <p class="desc-product">Amargo - 500 ml</p>
+      <p class="price-product">Preço: R$ 21,80</p>
+    </div>
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Quantidade</mat-label>
+        <input
+          mask="separator.2"
+          thousandSeparator="."
+          matInput
+          placeholder="Quantidade">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Total</mat-label>
+        <input
+          readonly="true"
+          matInput
+          placeholder="Total"
+          mask="separator.2"
+          thousandSeparator=".">
+        <mat-icon matSuffix>paid</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
 </main>
 
