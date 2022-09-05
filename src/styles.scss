@@ -37,6 +37,7 @@ $sales-siga-natural-theme: mat.define-light-theme((
 
 html body { height: 100vh; }
 body { margin: 0; padding: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {margin: 0px; padding: 0px;}
 
 //Variáveis globais
 @import './app/config-scss/variables.scss';
