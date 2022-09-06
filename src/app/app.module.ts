@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { AppMaterialModule } from './shared/app-material/app-material/app-material.module';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErroComponent } from './components/erro/erro.component';
 import { NgxMaskModule } from 'ngx-mask';
 
@@ -24,6 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
     BrowserAnimationsModule,
     AppMaterialModule,
     ReactiveFormsModule,
+    FormsModule,
     NgxMaskModule.forRoot() //Nos modulos filhos também precisa importar como forChild
   ],
   providers: [],

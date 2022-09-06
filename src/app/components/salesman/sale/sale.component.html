@@ -16,59 +16,69 @@
 
   <div class="divider"></div>
 
+  <!-- Lista de produtos -->
+
   <h3 id="products">Produtos</h3>
 
   <div class="card-product">
     <h4>{{products[0].name}}</h4>
     <div class="product-info">
-      <img [src]="products[0].pathImg" alt="amargo tradicional">
+      <img [src]="products[0].pathImg" [alt]="products[0].name">
       <p class="desc-product">{{products[0].description}}</p>
-      <p class="price-product">Preço: R$ {{products[0].price}}</p>
+      <p class="price-product">Preço: {{products[0].price | currency }}</p>
     </div>
 
-    <form>
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Quantidade</mat-label>
         <input
+          [(ngModel)]="products[0].quantity"
           mask="separator.2"
           thousandSeparator="."
           matInput
-          placeholder="Quantidade">
+          placeholder="Quantidade"
+          (input)="somarQuantity(products[0].id)">
       </mat-form-field>
+
       <mat-form-field class="readOnly">
-        <mat-label>Subtotal 0,00</mat-label>
+        <mat-label>Subtotal</mat-label>
         <input
+          [(ngModel)]="products[0].amount"
           readonly="true"
           matInput
           placeholder="0,00"
           mask="separator.2"
-          thousandSeparator="."
-          name="amount">
+          thousandSeparator=".">
         <mat-icon matSuffix>paid</mat-icon>
       </mat-form-field>
-    </form>
+    </div>
 
   </div>
 
   <div class="card-product">
     <h4>{{products[1].name}}</h4>
     <div class="product-info">
-      <img [src]="products[1].pathImg" alt="amargo berinjela">
+      <img [src]="products[1].pathImg" [alt]="products[1].name">
       <p class="desc-product">{{products[1].description}}</p>
-      <p class="price-product">Preço: R$ {{products[1].price}}</p>
+      <p class="price-product">Preço: {{products[1].price | currency }}</p>
     </div>
-    <form>
+
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Quantidade</mat-label>
         <input
-          mask="separator.2"
+          [(ngModel)]="products[1].quantity"
+          mask="separator.0"
           thousandSeparator="."
           matInput
-          placeholder="Quantidade">
+          placeholder="Quantidade"
+          (input)="somarQuantity(products[1].id)">
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Total 0,00</mat-label>
+
+      <mat-form-field class="readOnly">
+        <mat-label>Subtotal</mat-label>
         <input
+          [(ngModel)]="products[1].amount"
           readonly="true"
           matInput
           placeholder="0,00"
@@ -76,28 +86,34 @@
           thousandSeparator=".">
         <mat-icon matSuffix>paid</mat-icon>
       </mat-form-field>
-    </form>
+    </div>
+
   </div>
 
   <div class="card-product">
     <h4>{{products[2].name}}</h4>
     <div class="product-info">
-      <img [src]="products[2].pathImg" alt="amargo hortelã">
+      <img [src]="products[0].pathImg" [alt]="products[2].name">
       <p class="desc-product">{{products[2].description}}</p>
-      <p class="price-product">Preço: R$ {{products[2].price}}</p>
+      <p class="price-product">Preço: {{products[2].price | currency }}</p>
     </div>
-    <form>
+
+    <div>
       <mat-form-field appearance="outline">
         <mat-label>Quantidade</mat-label>
         <input
-          mask="separator.2"
+          [(ngModel)]="products[2].quantity"
+          mask="separator.0"
           thousandSeparator="."
           matInput
-          placeholder="Quantidade">
+          placeholder="Quantidade"
+          (input)="somarQuantity(products[2].id)">
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Total 0,00</mat-label>
+
+      <mat-form-field class="readOnly">
+        <mat-label>Subtotal</mat-label>
         <input
+          [(ngModel)]="products[2].amount"
           readonly="true"
           matInput
           placeholder="0,00"
@@ -105,7 +121,8 @@
           thousandSeparator=".">
         <mat-icon matSuffix>paid</mat-icon>
       </mat-form-field>
-    </form>
+    </div>
+
   </div>
 </main>
 
