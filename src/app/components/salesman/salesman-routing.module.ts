@@ -6,10 +6,10 @@ import { SaleComponent } from './sale/sale.component';
 
 const routes: Routes = [
   {
-    path: '', component: SalesmanComponent,
+    path: '', component: SalesmanComponent, title: 'Siga Natural',
     children: [
       {path: 'dashboard', component: DashboardComponent, title: 'Dashboard-Siga Natural'},
-      {path: 'sale', component: SaleComponent}
+      {path: 'sale', component: SaleComponent, title: 'Venda-Siga Natural'}
     ]
   },
 ];

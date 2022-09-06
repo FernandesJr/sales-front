@@ -21,10 +21,11 @@
   <div class="card-product">
     <h4>{{products[0].name}}</h4>
     <div class="product-info">
-      <img src="assets/images/products/amargo/amargo-700px.jpg" alt="amargo tradicional">
+      <img [src]="products[0].pathImg" alt="amargo tradicional">
       <p class="desc-product">{{products[0].description}}</p>
       <p class="price-product">Preço: R$ {{products[0].price}}</p>
     </div>
+
     <form>
       <mat-form-field appearance="outline">
         <mat-label>Quantidade</mat-label>
@@ -34,23 +35,25 @@
           matInput
           placeholder="Quantidade">
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Total</mat-label>
+      <mat-form-field class="readOnly">
+        <mat-label>Subtotal 0,00</mat-label>
         <input
           readonly="true"
           matInput
-          placeholder="Total"
+          placeholder="0,00"
           mask="separator.2"
-          thousandSeparator=".">
+          thousandSeparator="."
+          name="amount">
         <mat-icon matSuffix>paid</mat-icon>
       </mat-form-field>
     </form>
+
   </div>
 
   <div class="card-product">
     <h4>{{products[1].name}}</h4>
     <div class="product-info">
-      <img src="assets/images/products/amargo/amargo-berinjela-700px.jpg" alt="amargo berinjela">
+      <img [src]="products[1].pathImg" alt="amargo berinjela">
       <p class="desc-product">{{products[1].description}}</p>
       <p class="price-product">Preço: R$ {{products[1].price}}</p>
     </div>
@@ -64,11 +67,11 @@
           placeholder="Quantidade">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Total</mat-label>
+        <mat-label>Total 0,00</mat-label>
         <input
           readonly="true"
           matInput
-          placeholder="Total"
+          placeholder="0,00"
           mask="separator.2"
           thousandSeparator=".">
         <mat-icon matSuffix>paid</mat-icon>
@@ -79,7 +82,7 @@
   <div class="card-product">
     <h4>{{products[2].name}}</h4>
     <div class="product-info">
-      <img src="assets/images/products/amargo/amargo-hortela-700px.jpg" alt="amargo hortelã">
+      <img [src]="products[2].pathImg" alt="amargo hortelã">
       <p class="desc-product">{{products[2].description}}</p>
       <p class="price-product">Preço: R$ {{products[2].price}}</p>
     </div>
@@ -93,11 +96,11 @@
           placeholder="Quantidade">
       </mat-form-field>
       <mat-form-field appearance="outline">
-        <mat-label>Total</mat-label>
+        <mat-label>Total 0,00</mat-label>
         <input
           readonly="true"
           matInput
-          placeholder="Total"
+          placeholder="0,00"
           mask="separator.2"
           thousandSeparator=".">
         <mat-icon matSuffix>paid</mat-icon>

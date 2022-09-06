@@ -4,5 +4,6 @@ export interface Product {
     description: string;
     price: string;
     quantity?: number;
-    amount?: number;
+    amount?: any;
+    pathImg: string;
 }

@@ -84,6 +84,14 @@ main {
       mat-icon {
         opacity: .7;
       }
+
+      &.readOnly {
+        cursor: context-menu;
+
+        input {
+          cursor: context-menu;
+        }
+      }
     }
   }
 }
