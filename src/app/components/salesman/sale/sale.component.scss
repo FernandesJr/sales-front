@@ -38,61 +38,83 @@ main {
     color: var(--secondary-color);
   }
 
-  .card-product {
-    max-width: 320px;
-    margin: 30px 5px;
-    padding: 5px;
-    border-radius: var(--radius-default);
-    background-color: var(--gray-color);
-    box-shadow: var(--shadow-default);
+  section.products-list {
+    display: flex;
+    overflow-x: scroll;
+    margin: 10px -20px;
+    padding: 0px 5px;
 
-    h4 {
-      text-align: center;
-      padding: 10px;
-      color: var(--primary-color);
-    }
+    .card-product {
+      min-width: rem-calc(250);
+      margin: 30px 5px;
+      padding: 5px;
+      border-radius: var(--radius-default);
+      background-color: var(--gray-color);
+      box-shadow: var(--shadow-default);
 
-    .product-info {
-      display: flex;
-      position: relative;
-      padding-bottom: 10px;
-
-      img {
-        width: 100px;
-        border-radius: 5px;
+      h4 {
+        text-align: center;
+        padding: 10px;
+        color: var(--primary-color);
       }
 
-      .desc-product {
-        padding: 0px 15px;
-        text-align: justify;
-        min-height: 80px;
+      .product-info {
+        display: flex;
+        position: relative;
+        padding-bottom: 10px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 5px;
+        }
+
+        .desc-product {
+          padding: 0px 15px;
+          text-align: justify;
+          min-height: 80px;
+        }
+
+        .price-product {
+          position: absolute;
+          bottom: -5px;
+          left: 115px;
+
+          font-weight: 500;
+          color: var(--secondary-color);
+        }
       }
 
-      .price-product {
-        position: absolute;
-        bottom: -5px;
-        left: 115px;
-
-        font-weight: 500;
-        color: var(--secondary-color);
-      }
-    }
-
-    mat-form-field {
-      width: 100%;
-
-      mat-icon {
-        opacity: .7;
+      mat-form-field {
+        width: 100%;
       }
 
-      &.readOnly {
-        cursor: context-menu;
+      .sub-amount {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid var(--primary-color);
+        font-weight: 450;
 
-        input {
-          cursor: context-menu;
+        mat-icon {
+          opacity: .7;
+          color: var(--primary-color);
         }
       }
     }
+  }
+
+  .amargo {
+    background-color: rgba(20, 69, 20, 0.652);
+  }
+
+  .vitamel {
+    background-color: #EBCB00;
+  }
+
+  .arrelique {
+    background-color: var(--secondary-color);
   }
 }
 

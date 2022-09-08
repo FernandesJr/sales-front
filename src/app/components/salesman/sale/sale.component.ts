@@ -17,7 +17,16 @@ export class SaleComponent implements OnInit {
       pathImg: 'assets/images/products/amargo/amargo-berinjela-700px.jpg'},
     {id: 3, name: 'Amargo Hortelã', price: 21.8,
       description: 'Amargo Hortelã 500 ml', amount: 0, quantity : 0,
-      pathImg: 'assets/images/products/amargo/amargo-hortela-700px.jpg'}
+      pathImg: 'assets/images/products/amargo/amargo-hortela-700px.jpg'},
+    {id: 4, name: 'Vitamel Capsula', price: 21.8,
+      description: '60 Capsulas', amount: 0, quantity : 0,
+      pathImg: 'assets/images/products/vitamel/vitamel-cap.jpg'},
+    {id: 5, name: 'Vitamel Mulher Capsula', price: 21.8,
+      description: '60 Capsulas', amount: 0, quantity : 0,
+      pathImg: 'assets/images/products/vitamel/vitamel-mulher-cap.jpeg'},
+    {id: 6, name: 'Arrelique', price: 21.8,
+      description: '500 ml', amount: 0, quantity : 0,
+      pathImg: 'assets/images/products/arrelique/arrelique500ml.jpeg'}
   ];
 
 
