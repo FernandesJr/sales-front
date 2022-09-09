@@ -95,31 +95,6 @@
         </div>
       </div>
     </div>
-
-    <div class="card-product">
-      <h4>{{products[2].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[2].pathImg" [alt]="products[2].name">
-        <p class="desc-product">{{products[2].description}}</p>
-        <p class="price-product">Preço: {{products[2].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[2].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="somarQuantity(products[2].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[2].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- Seção do Vitamel-->
@@ -203,31 +178,6 @@
         </div>
       </div>
     </div>
-
-    <div class="card-product">
-      <h4>{{products[5].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[5].pathImg" [alt]="products[5].name">
-        <p class="desc-product">{{products[5].description}}</p>
-        <p class="price-product">Preço: {{products[5].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[5].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="somarQuantity(products[5].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[5].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
-        </div>
-      </div>
-    </div>
   </section>
 
 </main>
@@ -235,7 +185,7 @@
 <section class="sale-summary">
     <div class="header-summary">
       <h2>TOTAL DA COMPRA</h2>
-      <p>R$ 7.845,25</p>
+      <p>{{ amountSale | currency }}</p>
     </div>
 
     <div class="paid">

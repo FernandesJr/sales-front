@@ -29,6 +29,7 @@ export class SaleComponent implements OnInit {
       pathImg: 'assets/images/products/arrelique/arrelique500ml.jpeg'}
   ];
 
+  public amountSale: number = 0;
 
   /*formCardProduct: UntypedFormGroup = this.formBuilder.group({
     quantityProduct: [''],
@@ -56,6 +57,14 @@ export class SaleComponent implements OnInit {
         this.products[idProduct-1].amount =
           this.products[idProduct-1].quantity * this.products[idProduct-1].price;
       }
+    });
+    this.amountSaleFinish();
+  }
+
+  public amountSaleFinish(): void {
+    this.amountSale = 0;
+    this.products.forEach((p) => {
+      this.amountSale += p.amount;
     });
   }
 
