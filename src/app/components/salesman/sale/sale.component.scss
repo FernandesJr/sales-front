@@ -1,5 +1,6 @@
 @import '../../../config-scss/rem-calc.scss';
 
+/*Produtos*/
 main {
   padding: rem-calc(20);
 
@@ -8,6 +9,7 @@ main {
     color: var(--secondary-color);
   }
 
+  /*Configurações básicas para todos os cards*/
   section.card {
     margin: 30px 5px;
     padding: 5px;
@@ -15,6 +17,7 @@ main {
     background-color: var(--gray-color);
     box-shadow: var(--shadow-default);
 
+    /*Cnpj do cliente*/
     h3 {
       padding: 5px 15px;
       font-size: rem-calc(16);
@@ -27,6 +30,7 @@ main {
     }
   }
 
+  /*Divisor para separar as seções*/
   .divider {
     height: 2px;
     width: 90%;
@@ -38,12 +42,14 @@ main {
     color: var(--secondary-color);
   }
 
+  /*Seção que separa os produtos por categorias*/
   section.products-list {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: scroll; //Scroll de forma horizontal dos produtos
     margin: 10px -20px;
     padding: 0px 5px;
 
+    /*Produtos*/
     .card-product {
       min-width: rem-calc(250);
       margin: 30px 5px;
@@ -85,10 +91,12 @@ main {
         }
       }
 
+      /*Quantidade de produtos*/
       mat-form-field {
         width: 100%;
       }
 
+      /*SubTotal do produto*/
       .sub-amount {
         display: flex;
         justify-content: space-between;
@@ -106,20 +114,27 @@ main {
   }
 
   .amargo {
-    background-color: rgba(20, 69, 20, 0.652);
+    /*Gradiente da categoria Amargo*/
+    background: rgb(255,255,255);
+    background: linear-gradient(97deg, rgba(255,255,255,1) 0%, rgba(66,92,65,1) 0%, rgba(170,169,116,1) 100%);
   }
 
   .vitamel {
-    background-color: #EBCB00;
+    /*Gradiente da categoria Vitamel*/
+    background: rgb(255,255,255);
+    background: linear-gradient(97deg, rgba(255,255,255,1) 0%, rgba(245,88,29,1) 0%, rgba(235,203,0,1) 100%);
   }
 
   .arrelique {
-    background-color: var(--secondary-color);
+    /*Gradiente da categoria Arrelique*/
+    background: rgb(66,92,65);
+    background: linear-gradient(267deg, rgba(66,92,65,1) 0%, rgba(228,231,228,1) 0%, rgba(157,65,36,1) 86%);
   }
 }
 
+/* Resumo da venda*/
 section.sale-summary {
-  background-color: var(--light-green-color);
+  background-color: var(--gray-color);
 
   .header-summary {
     display: flex;
@@ -131,9 +146,9 @@ section.sale-summary {
       padding: 5px 15px;
       font-weight: bold;
       font-size: rem-calc(16);
-      color: var(--secondary-color);
     }
 
+    /*Total da venda*/
     p {
       margin: 0px;
       padding: 5px 15px;
@@ -143,6 +158,7 @@ section.sale-summary {
     }
   }
 
+  /*Forma de pagamento*/
   .paid {
     text-align: center;
     mat-form-field {
@@ -165,12 +181,10 @@ section.sale-summary {
       }
 
       &.finish {
-        background-color: var(--secondary-color);
+        background-color: var(--primary-color);
         color: var(--gray-color);
         border: 1px solid var(--gray-color);
       }
     }
   }
-
-
 }
