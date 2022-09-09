@@ -1,5 +1,6 @@
 import { Product } from './../../../model/product';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sale',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaleComponent implements OnInit {
 
+  //Dados mocados
   public products: Product[] = [
     {id: 1, name: 'Amargo Tradicional', price: 21.8,
       description: 'Amargo 500 ml', amount: 0, quantity : 0,
@@ -31,27 +33,17 @@ export class SaleComponent implements OnInit {
 
   public amountSale: number = 0;
 
-  /*formCardProduct: UntypedFormGroup = this.formBuilder.group({
-    quantityProduct: [''],
-    amountProduct: ['']
-  })*/
+  public formSummary = this.formBuilder.group({  //injetar o FormBuilder
+    formPay: ['', [Validators.required]],
+    quantityTimes: [null]
+  })
 
-  /*grupForm = new FormGroup({
-    quantity: new FormControl(this.products[0].quantity),
-    amount: new FormControl(this.products[0].amount),
-  });*/
-
-  /*grupForm = this.formBuilder.group({  injetar o FormBuilder
-    quantity: [''],
-    amount: ['0.00']
-  })*/
-
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
   }
 
-  public somarQuantity(idProduct: number): void {
+  public addQuantityProd(idProduct: number): void {
     this.products.forEach((p) => {
       if(p.id == idProduct) {
         this.products[idProduct-1].amount =
@@ -69,6 +61,6 @@ export class SaleComponent implements OnInit {
   }
 
   public submit() {
-    console.log(this.products);
+    console.log(this.formSummary);
   }
 }
