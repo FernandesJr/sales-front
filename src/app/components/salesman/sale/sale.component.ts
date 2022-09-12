@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { Product } from './../../../model/product';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sale',
@@ -41,7 +43,11 @@ export class SaleComponent implements OnInit {
     quantityTimes: [null]
   })
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
   }
@@ -74,10 +80,44 @@ export class SaleComponent implements OnInit {
 
   //Validação mínima para venda
   public saleValid(): boolean {
-    return this.formSummary.valid && this.amountSale > 0;
+    if (this.formSummary.value.cnpj?.length != 14) {
+      this.openSnackBar('Informe um CNPJ válido');
+      return false;
+    }
+    if (this.amountSale == 0) {
+      this.openSnackBar('Informe ao menos um produto');
+      return false;
+    }
+    if (this.formSummary.value.formPay == '') {
+      this.openSnackBar('Informe uma forma de pagamento');
+      return false;
+    }
+    if (this.formSummary.value.formPay == 'ticket') {
+      if (this.formSummary.value.quantityTimes == null) {
+        this.openSnackBar('Informe a quantidade de parcelamento');
+      }
+      return false;
+    }
+    return true;
+  }
+
+  public openSnackBar(message: string): void {
+    this._snackBar.open(message, 'X', {
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      duration: 5000
+    });
   }
 
   public submit() {
-    console.log(this.formSummary);
+    if (this.saleValid()){
+      console.log(this.formSummary);
+      this._snackBar.open('Compra finalizada', 'X',  {
+        horizontalPosition: 'right',
+        verticalPosition: 'top',
+        duration: 5000,
+      });
+      this.router.navigate(['salesman/dashboard']);
+    }
   }
 }
