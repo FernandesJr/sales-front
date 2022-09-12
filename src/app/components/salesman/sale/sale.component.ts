@@ -33,7 +33,10 @@ export class SaleComponent implements OnInit {
 
   public amountSale: number = 0;
 
+  public clientName: string = '';
+
   public formSummary = this.formBuilder.group({  //injetar o FormBuilder
+    cnpj: ['', [Validators.required, Validators.minLength(14)]],
     formPay: ['', [Validators.required]],
     quantityTimes: [null]
   })
@@ -41,6 +44,15 @@ export class SaleComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+  }
+
+  public checkCnpj() {
+    if (this.formSummary.value.cnpj?.length == 14) {
+      //TODO Implement request backend
+      this.clientName = 'Farmácia teste de Implantação';
+    } else {
+      this.clientName = '';
+    }
   }
 
   public addQuantityProd(idProduct: number): void {
@@ -58,6 +70,11 @@ export class SaleComponent implements OnInit {
     this.products.forEach((p) => {
       this.amountSale += p.amount;
     });
+  }
+
+  //Validação mínima para venda
+  public saleValid(): boolean {
+    return this.formSummary.valid && this.amountSale > 0;
   }
 
   public submit() {

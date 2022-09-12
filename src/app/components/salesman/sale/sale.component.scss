@@ -28,6 +28,12 @@ main {
       width: 90%;
       padding: 0px 15px;
     }
+
+    .client-name {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--secondary-color);
+    }
   }
 
   /*Divisor para separar as seções*/
