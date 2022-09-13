@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErroComponent } from './components/erro/erro.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,12 @@ import { NgxMaskModule } from 'ngx-mask';
     AppMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxMaskModule.forRoot() //Nos modulos filhos também precisa importar como forChild
+    NgxMaskModule.forRoot(), //Nos modulos filhos também precisa importar como forChild
+    ToastrModule.forRoot({ //Configurações Globais, porém, pode ser alterado em cada toastr
+      closeButton: true,
+      timeOut: 7000,
+      progressBar: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

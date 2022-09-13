@@ -3,6 +3,7 @@ import { Product } from './../../../model/product';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sale',
@@ -46,7 +47,8 @@ export class SaleComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -112,11 +114,7 @@ export class SaleComponent implements OnInit {
   public submit() {
     if (this.saleValid()){
       console.log(this.formSummary);
-      this._snackBar.open('Compra finalizada', 'X',  {
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-        duration: 5000,
-      });
+      this.toastr.success('Venda Realizada');
       this.router.navigate(['salesman/dashboard']);
     }
   }
