@@ -19,9 +19,7 @@ mat-drawer {
 
   a {
     text-decoration: none;
-  }
 
-  .nav-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,6 +43,10 @@ mat-drawer {
       font-size: .7rem;
       margin-left: -12px;
     }
+
+    &:hover {
+      color: var(--light-green-color);
+    }
   }
 
   .divider {
@@ -52,10 +54,6 @@ mat-drawer {
     width: 80%;
     margin: 15px auto;
     background-color: var(--gray-color);
-  }
-
-  .nav-icons:hover {
-    color: var(--light-green-color);
   }
 }
 
@@ -72,6 +70,11 @@ mat-toolbar {
     font-size: 1.2rem;
     color: var(--secondary-color);
   }
+}
+
+//Rota ativa
+.active {
+  color: var(--light-green-color) !important;
 }
 
 /*Em telas menores de 500px o icone de logout some da toobar*/

@@ -3,43 +3,33 @@
     <!--Conteudo do nav-->
     <img src="assets/images/logo.png" alt="Logo da empresa">
 
-    <a routerLink="/salesman/dashboard">
-      <div class="nav-icons">
-        <mat-icon aria-hidden="false" aria-label="dashboard">local_fire_department</mat-icon>
-        <span>Dashboard</span>
-      </div>
+    <a routerLink="/salesman/dashboard" [routerLinkActive]="['active']">
+      <mat-icon aria-hidden="false" aria-label="dashboard">local_fire_department</mat-icon>
+      <span>Dashboard</span>
     </a>
 
     <div class="divider"></div>
 
-    <a routerLink="/salesman/sale">
-      <div class="nav-icons">
-        <mat-icon aria-hidden="false" aria-label="dashboard">shopping_cart</mat-icon>
-        <span>Venda</span>
-      </div>
+    <a routerLink="/salesman/sale" [routerLinkActive]="['active']">
+      <mat-icon aria-hidden="false" aria-label="dashboard">shopping_cart</mat-icon>
+      <span>Venda</span>
     </a>
 
-    <a routerLink="/search-clients">
-      <div class="nav-icons">
-        <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">manage_search</mat-icon>
-        <span>Histórico</span>
-      </div>
+    <a routerLink="/search-clients" [routerLinkActive]="['active']">
+      <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">manage_search</mat-icon>
+      <span>Histórico</span>
     </a>
 
     <div class="divider"></div>
 
-    <a routerLink="/configurations">
-      <div class="nav-icons">
-        <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>
-        <span>Configurações</span>
-      </div>
+    <a routerLink="/configurations" [routerLinkActive]="['active']">
+      <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>
+      <span>Configurações</span>
     </a>
 
     <a href="" >
-      <div class="nav-icons">
-        <mat-icon aria-hidden="false" aria-label="dashboard" id="nav-logout">logout</mat-icon>
-        <span>Logout</span>
-      </div>
+      <mat-icon aria-hidden="false" aria-label="dashboard" id="nav-logout">logout</mat-icon>
+      <span>Logout</span>
     </a>
   </mat-drawer>
 
