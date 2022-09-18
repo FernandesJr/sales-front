@@ -144,6 +144,7 @@ main {
   .space-table {
     overflow-x: scroll;
     table {
+      width: 100%;
       .col-width-min {
         /*min-width: 100px;*/
         padding-right: 10px;
