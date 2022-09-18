@@ -124,6 +124,15 @@ export class SaleComponent implements OnInit {
     });
   }
 
+  public cancel(): void {
+    if(this.showTableSummary) {
+      this.showTableSummary = false;
+    } else {
+      //Limpar todos os dados da venda
+      this.router.navigate(['salesman/sale']);
+    }
+  }
+
   public submit() {
     if (this.showTableSummary && this.saleValid()){
       console.log(this.formSummary);
