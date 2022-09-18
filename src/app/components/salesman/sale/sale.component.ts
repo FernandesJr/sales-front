@@ -34,6 +34,9 @@ export class SaleComponent implements OnInit {
       pathImg: 'assets/images/products/arrelique/arrelique500ml.jpeg'}
   ];
 
+  public productsSelected: Product[] = [];
+  public showTableSummary: boolean = false;
+
   public amountSale: number = 0;
 
   public clientName: string = '';
@@ -42,7 +45,12 @@ export class SaleComponent implements OnInit {
     cnpj: ['', [Validators.required, Validators.minLength(14)]],
     formPay: ['', [Validators.required]],
     quantityTimes: [null]
-  })
+  });
+
+  //Colunas da tabela
+  displayedColumns: string[] = ['name', 'description', 'price', 'quantity', 'amount'];
+  //dados que preenchem a tabela
+  dataSource = this.productsSelected;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -74,9 +82,14 @@ export class SaleComponent implements OnInit {
   }
 
   public amountSaleFinish(): void {
+    this.productsSelected = []; //Lista que preenche a tabela de produtos selecionados
     this.amountSale = 0;
     this.products.forEach((p) => {
-      this.amountSale += p.amount;
+      if(p.amount != 0) {
+        this.amountSale += p.amount;
+        this.productsSelected.push(p);
+        this.dataSource = this.productsSelected;
+      }
     });
   }
 
@@ -97,8 +110,8 @@ export class SaleComponent implements OnInit {
     if (this.formSummary.value.formPay == 'ticket') {
       if (this.formSummary.value.quantityTimes == null) {
         this.openSnackBar('Informe a quantidade de parcelamento');
+        return false;
       }
-      return false;
     }
     return true;
   }
@@ -112,10 +125,13 @@ export class SaleComponent implements OnInit {
   }
 
   public submit() {
-    if (this.saleValid()){
+    if (this.showTableSummary && this.saleValid()){
       console.log(this.formSummary);
       this.toastr.success('Venda Realizada');
       this.router.navigate(['salesman/dashboard']);
+    }
+    if (this.saleValid()){
+      this.showTableSummary = true;
     }
   }
 }

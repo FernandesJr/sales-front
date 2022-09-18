@@ -136,6 +136,24 @@ main {
     background: rgb(66,92,65);
     background: linear-gradient(267deg, rgba(66,92,65,1) 0%, rgba(228,231,228,1) 0%, rgba(157,65,36,1) 86%);
   }
+
+  h1 {
+    text-align: center;
+  }
+
+  .space-table {
+    overflow-x: scroll;
+    table {
+      .col-width-min {
+        /*min-width: 100px;*/
+        padding-right: 10px;
+      }
+
+      .quatity{
+        text-align: center;
+      }
+    }
+  }
 }
 
 /* Resumo da venda*/

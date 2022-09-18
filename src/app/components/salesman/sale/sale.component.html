@@ -18,168 +18,196 @@
 
   <div class="divider"></div>
 
-  <!-- Lista de produtos -->
-
-  <h3 id="products">Produtos</h3>
-
-  <section class="products-list amargo">
-    <div class="card-product">
-      <h4>{{products[0].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[0].pathImg" [alt]="products[0].name">
-        <p class="desc-product">{{products[0].description}}</p>
-        <p class="price-product">Preço: {{products[0].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[0].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[0].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[0].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
+  <section *ngIf="!showTableSummary">
+    <!-- Lista de produtos -->
+    <h3 id="products">Produtos</h3>
+    <section class="products-list amargo">
+      <div class="card-product">
+        <h4>{{products[0].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[0].pathImg" [alt]="products[0].name">
+          <p class="desc-product">{{products[0].description}}</p>
+          <p class="price-product">Preço: {{products[0].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[0].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[0].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[0].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="card-product">
-      <h4>{{products[1].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[1].pathImg" [alt]="products[1].name">
-        <p class="desc-product">{{products[1].description}}</p>
-        <p class="price-product">Preço: {{products[1].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[1].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[1].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[1].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
+      <div class="card-product">
+        <h4>{{products[1].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[1].pathImg" [alt]="products[1].name">
+          <p class="desc-product">{{products[1].description}}</p>
+          <p class="price-product">Preço: {{products[1].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[1].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[1].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[1].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="card-product">
-      <h4>{{products[2].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[2].pathImg" [alt]="products[2].name">
-        <p class="desc-product">{{products[2].description}}</p>
-        <p class="price-product">Preço: {{products[2].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[2].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[2].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[2].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
+      <div class="card-product">
+        <h4>{{products[2].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[2].pathImg" [alt]="products[2].name">
+          <p class="desc-product">{{products[2].description}}</p>
+          <p class="price-product">Preço: {{products[2].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[2].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[2].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[2].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!-- Seção do Vitamel-->
+    <section class="products-list vitamel">
+      <div class="card-product">
+        <h4>{{products[3].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[3].pathImg" [alt]="products[3].name">
+          <p class="desc-product">{{products[3].description}}</p>
+          <p class="price-product">Preço: {{products[3].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[3].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[3].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[3].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
+        </div>
+      </div>
+      <div class="card-product">
+        <h4>{{products[4].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[4].pathImg" [alt]="products[4].name">
+          <p class="desc-product">{{products[4].description}}</p>
+          <p class="price-product">Preço: {{products[4].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[4].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[4].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[4].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Seção Arrelique-->
+    <section class="products-list arrelique">
+      <div class="card-product">
+        <h4>{{products[5].name}}</h4>
+        <div class="product-info">
+          <img [src]="products[5].pathImg" [alt]="products[5].name">
+          <p class="desc-product">{{products[5].description}}</p>
+          <p class="price-product">Preço: {{products[5].price | currency }}</p>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Quantidade</mat-label>
+            <input
+              [(ngModel)]="products[5].quantity"
+              mask="separator.2"
+              thousandSeparator="."
+              matInput
+              placeholder="Quantidade"
+              (input)="addQuantityProd(products[5].id)">
+          </mat-form-field>
+          <div class="sub-amount">
+            <span>Subtotal: {{ products[5].amount | currency }}</span>
+            <mat-icon>paid</mat-icon>
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 
-  <!-- Seção do Vitamel-->
-
-  <section class="products-list vitamel">
-    <div class="card-product">
-      <h4>{{products[3].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[3].pathImg" [alt]="products[3].name">
-        <p class="desc-product">{{products[3].description}}</p>
-        <p class="price-product">Preço: {{products[3].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[3].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[3].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[3].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-product">
-      <h4>{{products[4].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[4].pathImg" [alt]="products[4].name">
-        <p class="desc-product">{{products[4].description}}</p>
-        <p class="price-product">Preço: {{products[4].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[4].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[4].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[4].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Arrelique-->
-  <section class="products-list arrelique">
-
-    <div class="card-product">
-      <h4>{{products[5].name}}</h4>
-      <div class="product-info">
-        <img [src]="products[5].pathImg" [alt]="products[5].name">
-        <p class="desc-product">{{products[5].description}}</p>
-        <p class="price-product">Preço: {{products[5].price | currency }}</p>
-      </div>
-      <div>
-        <mat-form-field appearance="outline">
-          <mat-label>Quantidade</mat-label>
-          <input
-            [(ngModel)]="products[5].quantity"
-            mask="separator.2"
-            thousandSeparator="."
-            matInput
-            placeholder="Quantidade"
-            (input)="addQuantityProd(products[5].id)">
-        </mat-form-field>
-        <div class="sub-amount">
-          <span>Subtotal: {{ products[5].amount | currency }}</span>
-          <mat-icon>paid</mat-icon>
-        </div>
-      </div>
-    </div>
+  <h1>Resumo da venda</h1>
+  
+  <!--Table summary -->
+  <section *ngIf="showTableSummary" class="space-table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Nome </th>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.name}} </td>
+      </ng-container>
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Descrição </th>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.description}} </td>
+      </ng-container>
+      <!-- Price Column -->
+      <ng-container matColumnDef="price" class="col-width-min">
+        <th mat-header-cell *matHeaderCellDef> Preço </th>
+        <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+      </ng-container>
+      <!-- Quantity Column -->
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min quatity"> Quantidade </th>
+        <td mat-cell *matCellDef="let element"class="col-width-min quatity"> {{element.quantity}} </td>
+      </ng-container>
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount" class="col-width-min">
+        <th mat-header-cell *matHeaderCellDef> Subtotal </th>
+        <td mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
   </section>
 
 </main>
