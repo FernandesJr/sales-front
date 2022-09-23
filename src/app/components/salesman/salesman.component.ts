@@ -15,6 +15,10 @@ export class SalesmanComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public closeMenu(): void {
+    this.menu = true;
+  }
+
   public showMenu():void {
     this.menu = !this.menu;
   }
