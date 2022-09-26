@@ -26,15 +26,28 @@ main {
     background: var(--gray-color);
     padding-bottom: 20px;
 
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    mat-icon {
+      color: rgb(198, 2, 2);
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
     .btn-cancel {
       width: 150px;
       padding: 10px;
+      font-size: 1.1rem;
       border: 1px solid var(--secondary-color);
       border-radius: 5px;
       background: var(--gray-color);
       color: var(--secondary-color);
       cursor: pointer;
     }
-    
+
   }
 }
