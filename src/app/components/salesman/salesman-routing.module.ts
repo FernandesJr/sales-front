@@ -1,3 +1,4 @@
+import { HistoryClientComponent } from './history-client/history-client.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SalesmanComponent } from './salesman.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,8 @@ const routes: Routes = [
     path: '', component: SalesmanComponent, title: 'Siga Natural',
     children: [
       {path: 'dashboard', component: DashboardComponent, title: 'Dashboard-Siga Natural'},
-      {path: 'sale', component: SaleComponent, title: 'Venda-Siga Natural'}
+      {path: 'sale', component: SaleComponent, title: 'Venda-Siga Natural'},
+      {path: 'history-client', component: HistoryClientComponent, title: 'Histórico do cliente'}
     ]
   },
 ];

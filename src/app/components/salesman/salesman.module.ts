@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {LOCALE_ID, DEFAULT_CURRENCY_CODE} from '@angular/core';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
+import { HistoryClientComponent } from './history-client/history-client.component';
 
 registerLocaleData(localePt, 'pt');
 /*alterando A MOEDA default*/
@@ -21,7 +22,8 @@ registerLocaleData(localePt, 'pt');
   declarations: [
     SalesmanComponent,
     SaleComponent,
-    DashboardComponent
+    DashboardComponent,
+    HistoryClientComponent
   ],
   imports: [
     CommonModule,

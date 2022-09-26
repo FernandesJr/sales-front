@@ -3,9 +3,9 @@
     <!--Conteudo do nav-->
     <img src="assets/images/logo.png" alt="Logo da empresa">
 
-    <a 
-      routerLink="/salesman/dashboard" 
-      [routerLinkActive]="['active']" 
+    <a
+      routerLink="/salesman/dashboard"
+      [routerLinkActive]="['active']"
       (click)="drawer.toggle(); closeMenu()">
       <mat-icon aria-hidden="false" aria-label="dashboard">local_fire_department</mat-icon>
       <span>Dashboard</span>
@@ -13,16 +13,16 @@
 
     <div class="divider"></div>
 
-    <a 
-      routerLink="/salesman/sale" 
-      [routerLinkActive]="['active']" 
+    <a
+      routerLink="/salesman/sale"
+      [routerLinkActive]="['active']"
       (click)="drawer.toggle(); closeMenu()">
       <mat-icon aria-hidden="false" aria-label="dashboard">shopping_cart</mat-icon>
       <span>Venda</span>
     </a>
 
-    <a 
-      routerLink="/search-clients" 
+    <a
+      routerLink="/salesman/history-client"
       [routerLinkActive]="['active']"
       (click)="drawer.toggle(); closeMenu()">
       <mat-icon aria-hidden="false" aria-label="dashboard" id="sales-search">manage_search</mat-icon>
@@ -31,8 +31,8 @@
 
     <div class="divider"></div>
 
-    <a 
-      routerLink="/configurations" 
+    <a
+      routerLink="/configurations"
       [routerLinkActive]="['active']"
       (click)="drawer.toggle(); closeMenu()">
       <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>

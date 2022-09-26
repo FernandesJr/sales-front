@@ -1,0 +1,56 @@
+@import '../../../config-scss/rem-calc.scss';
+
+main {
+  padding: rem-calc(20);
+
+  h2 {
+    font-size: rem-calc(16);
+    color: var(--secondary-color);
+  }
+
+  /*Configurações básicas para todos os cards*/
+  section.card {
+    margin: 30px 5px;
+    padding: 5px;
+    border-radius: var(--radius-default);
+    background-color: var(--gray-color);
+    box-shadow: var(--shadow-default);
+
+    /*Cnpj do cliente*/
+    h3 {
+      padding: 5px 15px;
+      font-size: rem-calc(16);
+      color: var(--primary-color);
+    }
+
+    mat-form-field  {
+      width: 90%;
+      padding: 0px 15px;
+    }
+
+    .client-name {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--secondary-color);
+    }
+  }
+
+  /*Divisor para separar as seções*/
+  .divider {
+    height: 2px;
+    width: 90%;
+    margin: 15px auto;
+    background-color: var(--gray-color);
+  }
+
+  .space-table {
+    overflow-x: scroll;
+    table {
+      width: 100%;
+      .col-width-min {
+        /*min-width: 100px;*/
+        padding-right: 10px;
+      }
+    }
+  }
+}
