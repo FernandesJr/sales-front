@@ -16,28 +16,59 @@
     <p class="client-name">{{ clientName }}</p>
   </section>
 
+  <p class="info">{{hasTicket}}</p>
   <div class="divider"></div>
 
-  <!-- table -->
-  <section class="space-table">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- table Ticket-->
+  <section class="space-table" *ngIf="tickes.length >= 1">
+    <table mat-table [dataSource]="tickes" class="mat-elevation-z8">
       <!-- id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef class="col-width-min"> ID </th>
         <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.id}} </td>
       </ng-container>
       <!-- date Column -->
-      <ng-container matColumnDef="date">
+      <ng-container matColumnDef="dueDate">
         <th mat-header-cell *matHeaderCellDef class="col-width-min"> Data </th>
-        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.date}} </td>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.dueDate}} </td>
       </ng-container>
       <!-- amount Column -->
       <ng-container matColumnDef="amount" class="col-width-min">
         <th mat-header-cell *matHeaderCellDef> Total </th>
         <td mat-cell *matCellDef="let element"> {{element.amount | currency}} </td>
       </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsTicket"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsTicket;"></tr>
+    </table>
+  </section>
+
+  <h3>Histórico das vendas</h3>
+
+  <!-- table Sales-->
+  <section class="space-table">
+    <table mat-table [dataSource]="sales" class="mat-elevation-z8">
+      <!-- id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min"> ID </th>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.id}} </td>
+      </ng-container>
+      <!-- salesmanName Column -->
+      <ng-container matColumnDef="salesmanName">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Vendedor </th>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.salesman.name}} </td>
+      </ng-container>
+      <!-- amount Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Total </th>
+        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.amount | currency}} </td>
+      </ng-container>
+       <!-- formaPay Column -->
+       <ng-container matColumnDef="formPay" class="col-width-min">
+        <th mat-header-cell *matHeaderCellDef> Forma de pagamento </th>
+        <td mat-cell *matCellDef="let element"> {{element.formPay}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsSale"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsSale;"></tr>
     </table>
   </section>
 </main>
