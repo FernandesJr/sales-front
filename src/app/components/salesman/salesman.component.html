@@ -32,7 +32,7 @@
     <div class="divider"></div>
 
     <a
-      routerLink="/configurations"
+      routerLink="/salesman/settings"
       [routerLinkActive]="['active']"
       (click)="drawer.toggle(); closeMenu()">
       <mat-icon aria-hidden="false" aria-label="dashboard">settings</mat-icon>
@@ -53,7 +53,7 @@
         <mat-icon aria-hidden="false" aria-label="fechar menu" *ngIf="!menu">close</mat-icon>
       </button>
 
-      <button mat-button class="btn-user-name"><span>Fernandes</span></button>
+      <button mat-button class="btn-user-name" (click)="settings()"><span>Fernandes</span></button>
 
       <button type="button" mat-button id="btn-logout" (click)="logout()">
         <mat-icon aria-hidden="false" aria-label="sair" >logout</mat-icon>

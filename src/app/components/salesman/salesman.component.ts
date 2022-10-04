@@ -15,6 +15,10 @@ export class SalesmanComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public settings(): void {
+    this.router.navigate(['salesman/settings']);
+  }
+
   public closeMenu(): void {
     this.menu = true;
   }

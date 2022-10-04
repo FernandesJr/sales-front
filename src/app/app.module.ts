@@ -11,13 +11,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErroComponent } from './components/erro/erro.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ToastrModule } from 'ngx-toastr';
+import { SettingsComponent } from './shared/components/settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FooterComponent,
-    ErroComponent
+    ErroComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

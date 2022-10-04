@@ -1,3 +1,4 @@
+import { SettingsComponent } from './../../shared/components/settings/settings.component';
 import { HistoryClientComponent } from './history-client/history-client.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SalesmanComponent } from './salesman.component';
@@ -11,7 +12,8 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: DashboardComponent, title: 'Dashboard-Siga Natural'},
       {path: 'sale', component: SaleComponent, title: 'Venda-Siga Natural'},
-      {path: 'history-client', component: HistoryClientComponent, title: 'Histórico do cliente'}
+      {path: 'history-client', component: HistoryClientComponent, title: 'Histórico do cliente'},
+      {path: 'settings', component: SettingsComponent, title: 'Configurações'}
     ]
   },
 ];
