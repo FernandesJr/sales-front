@@ -16,8 +16,9 @@
     <p class="client-name">{{ clientName }}</p>
   </section>
 
-  <p class="info">{{hasTicket}}</p>
-  <div class="divider"></div>
+  <div class="t-storySale" *ngIf="hasTicket != ''">
+    <p [ngClass]="{'dont-ticket' : tickes.length < 1, 'with-ticket': tickes.length >= 1}">{{hasTicket}}</p>
+  </div>
 
   <!-- table Ticket-->
   <section class="space-table" *ngIf="tickes.length >= 1">
@@ -42,33 +43,38 @@
     </table>
   </section>
 
-  <h3>Histórico das vendas</h3>
+  <div class="divider"></div>
 
-  <!-- table Sales-->
-  <section class="space-table">
-    <table mat-table [dataSource]="sales" class="mat-elevation-z8">
-      <!-- id Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef class="col-width-min"> ID </th>
-        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.id}} </td>
-      </ng-container>
-      <!-- salesmanName Column -->
-      <ng-container matColumnDef="salesmanName">
-        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Vendedor </th>
-        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.salesman.name}} </td>
-      </ng-container>
-      <!-- amount Column -->
-      <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef class="col-width-min"> Total </th>
-        <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.amount | currency}} </td>
-      </ng-container>
-       <!-- formaPay Column -->
-       <ng-container matColumnDef="formPay" class="col-width-min">
-        <th mat-header-cell *matHeaderCellDef> Forma de pagamento </th>
-        <td mat-cell *matCellDef="let element"> {{element.formPay}} </td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumnsSale"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumnsSale;"></tr>
-    </table>
+  <section *ngIf="sales.length > 0">
+    <div class="t-storySale">
+      <h3>Histórico das vendas</h3>
+    </div>
+    <!-- table Sales-->
+    <section class="space-table">
+      <table mat-table [dataSource]="sales" class="mat-elevation-z8">
+        <!-- id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef class="col-width-min"> ID </th>
+          <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.id}} </td>
+        </ng-container>
+        <!-- salesmanName Column -->
+        <ng-container matColumnDef="salesmanName">
+          <th mat-header-cell *matHeaderCellDef class="col-width-min"> Vendedor </th>
+          <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.salesman.name}} </td>
+        </ng-container>
+        <!-- amount Column -->
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef class="col-width-min"> Total </th>
+          <td mat-cell *matCellDef="let element" class="col-width-min"> {{element.amount | currency}} </td>
+        </ng-container>
+         <!-- formaPay Column -->
+         <ng-container matColumnDef="formPay" class="col-width-min">
+          <th mat-header-cell *matHeaderCellDef> Forma de pagamento </th>
+          <td mat-cell *matCellDef="let element"> {{element.formPay}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsSale"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsSale;"></tr>
+      </table>
+    </section>
   </section>
 </main>
