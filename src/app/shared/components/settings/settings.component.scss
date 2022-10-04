@@ -1,0 +1,70 @@
+@import '../../../config-scss/rem-calc.scss';
+
+main{
+  padding: rem-calc(20);
+
+  h2 {
+    font-size: rem-calc(16);
+    color: var(--secondary-color);
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /*Configurações básicas para todos os cards*/
+  section.card {
+    max-width: rem-calc(550);
+    margin: 30px 5px;
+    padding: 15px 5px 3px 5px;
+    border-radius: var(--radius-default);
+    background-color: var(--gray-color);
+    box-shadow: var(--shadow-default);
+
+    mat-form-field  {
+      width: 90%;
+      padding: 0px 15px;
+    }
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: rem-calc(25);
+    padding-bottom: rem-calc(30);
+
+    button {
+      width: 40%;
+
+      &.cancel {
+        background-color: var(--gray-color);
+        color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+      }
+
+      &.finish {
+        background-color: var(--primary-color);
+        color: var(--gray-color);
+        border: 1px solid var(--gray-color);
+      }
+    }
+  }
+
+}
+
+/*Aplicado somente em telas maiores que 600px*/
+@media only screen and (min-width: 600px){
+  main {
+
+    .btns {
+      margin: rem-calc(25) auto 0px auto;
+      width: 550px;
+
+      button {
+        width: 200px !important;
+      }
+    }
+  }
+}
