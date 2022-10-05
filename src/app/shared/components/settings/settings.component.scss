@@ -8,29 +8,36 @@ main{
     color: var(--secondary-color);
   }
 
-  .center {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  .container-card {
+    margin: 30px 5px;
+
+    /*Configurações básicas para todos os cards*/
+    section.card {
+      max-width: rem-calc(550);
+      margin: auto;
+      padding: 15px 5px 3px 5px;
+      border-radius: var(--radius-default);
+      background-color: var(--gray-color);
+      box-shadow: var(--shadow-default);
+
+      mat-form-field  {
+        width: 90%;
+        padding: 0px 15px;
+
+        mat-icon {
+          opacity: 0.5;
+        }
+      }
+    }
   }
 
-  /*Configurações básicas para todos os cards*/
-  section.card {
-    max-width: rem-calc(550);
-    margin: 30px 5px;
-    padding: 15px 5px 3px 5px;
-    border-radius: var(--radius-default);
-    background-color: var(--gray-color);
-    box-shadow: var(--shadow-default);
-
-    mat-form-field  {
-      width: 90%;
-      padding: 0px 15px;
-    }
+  .icon_password {
+    cursor: pointer;
   }
 
   .btns {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: rem-calc(25);
     padding-bottom: rem-calc(30);

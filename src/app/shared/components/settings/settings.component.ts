@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
+  public iconPassword: string = 'visibility';
+  public typePassword: string = 'password';
+
   public formUser = this.formBuilder.group({
     name: ['', [Validators.required, Validators.max(50)]],
     lastName: ['', [Validators.required, Validators.max(50)]],
@@ -26,5 +29,15 @@ export class SettingsComponent implements OnInit {
 
   public cancel(): void {
 
+  }
+
+  public visiblePassword(): void {
+    if(this.iconPassword === 'visibility') {
+      this.iconPassword = 'visibility_off';
+      this.typePassword = 'text';
+    } else {
+      this.iconPassword = 'visibility';
+      this.typePassword = 'password';
+    }
   }
 }

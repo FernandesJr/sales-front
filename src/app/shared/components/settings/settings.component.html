@@ -1,6 +1,6 @@
 <main>
   <h2>Configurações</h2>
-  <div class="center">
+  <div class="container-card">
     <section class="card" [formGroup]="formUser">
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
@@ -25,18 +25,19 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Nova senha</mat-label>
+        <mat-label>Senha</mat-label>
         <input
           matInput
-          placeholder="Nova senha"
-          type="text"
+          placeholder="Senha"
+          [type]="typePassword"
           required
-          formControlName="newPassword"
-        >
+          formControlName="newPassword"/>
+        <mat-icon matSuffix class="icon_password" (click)="visiblePassword()">        {{iconPassword}}
+        </mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Repita a nova senha</mat-label>
+        <mat-label>Repita senha</mat-label>
         <input
           matInput
           placeholder="Repita a nova senha"
