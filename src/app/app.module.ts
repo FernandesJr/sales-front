@@ -12,6 +12,7 @@ import { ErroComponent } from './components/erro/erro.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ToastrModule } from 'ngx-toastr';
 import { SettingsComponent } from './shared/components/settings/settings.component';
+import { RecoverPasswordComponent } from './shared/components/recover-password/recover-password.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SettingsComponent } from './shared/components/settings/settings.compone
     LoginComponent,
     FooterComponent,
     ErroComponent,
-    SettingsComponent
+    SettingsComponent,
+    RecoverPasswordComponent
   ],
   imports: [
     BrowserModule,

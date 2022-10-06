@@ -61,6 +61,10 @@ main{
 
 }
 
+a {
+  text-decoration: none;
+}
+
 /*Aplicado somente em telas maiores que 600px*/
 @media only screen and (min-width: 600px){
   main {

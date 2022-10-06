@@ -12,8 +12,8 @@ export class SettingsComponent implements OnInit {
   public typePassword: string = 'password';
 
   public formUser = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.max(50)]],
-    lastName: ['', [Validators.required, Validators.max(50)]],
+    name: ['Gilberto', [Validators.required, Validators.max(50)]],
+    lastName: ['Fernandes', [Validators.required, Validators.max(50)]],
     newPassword: ['', [Validators.required, Validators.max(50)]],
     repeatPassword: ['', [Validators.required, Validators.max(50)]]
   })
